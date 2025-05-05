@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Habitable Zone Explorer</title>
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light mb-4">
+    <div class="container">
+      <span class="navbar-brand h4">Habitable Zone Explorer</span>
+    </div>
+  </nav>
+
+  <!-- 1. หน้าแรก: Filter by Spectral Type -->
+  <section class="container mb-5">
+    <div class="card p-4">
+      <h5 class="card-title">1. Filter by Spectral Type</h5>
+      <form id="typeForm" class="row g-3 align-items-end">
+        <div class="col-md-2">
+          <label for="spectralType" class="form-label">Type</label>
+          <select id="spectralType" class="form-select">
+            <option>O</option><option>B</option><option>A</option>
+            <option>F</option><option>G</option><option>K</option><option>M</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="subType" class="form-label">Subtype</label>
+          <select id="subType" class="form-select">
+            <option>0</option><option>1</option><option>2</option>
+            <option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="lumAvg" class="form-label">L★/L⊙ Avg</label>
+          <input type="text"
+                 id="lumAvg"
+                 class="form-control"
+                 readonly
+                 placeholder="–"/>
+        </div>
+        <div class="col-md-2">
+          <button type="button"
+                  id="btnTypeShow"
+                  class="btn btn-primary w-100">
+            Show
+          </button>
+        </div>
+      </form>
+      <div id="typeResult" class="mt-4"></div>
+    </div>
+  </section>
+
+  <!-- 2. Habitable Zone by L★/L⊙ -->
+  <section class="container mb-5">
+    <div class="card p-4">
+      <h5 class="card-title">2. Habitable Zone by L★/L⊙</h5>
+
+      <!-- Canvas แสดงผลแบบ linear -->
+      <div class="mb-4 text-center">
+        <canvas id="hzCanvas" width="800" height="200"></canvas>
+      </div>
+
+      <!-- Controls: แสดงระยะ rᵢₙ, rₒᵤₜ -->
+      <form id="loForm" class="row g-3 align-items-end">
+        <div class="col-md-2">
+          <label for="minR" class="form-label">rₘᵢₙ (AU) at 100 °C</label>
+          <input type="number" step="0.01"
+                 id="minR"
+                 class="form-control"
+                 readonly/>
+        </div>
+        <div class="col-md-1">
+          <button type="button"
+                  id="btnShowMin"
+                  class="btn btn-outline-primary w-100">
+            Show
+          </button>
+        </div>
+        <div class="col-md-2">
+          <label for="maxR" class="form-label">rₒᵤₜ (AU) at 0 °C</label>
+          <input type="number" step="0.01"
+                 id="maxR"
+                 class="form-control"
+                 readonly/>
+        </div>
+        <div class="col-md-1">
+          <button type="button"
+                  id="btnShowMax"
+                  class="btn btn-outline-primary w-100">
+            Show
+          </button>
+        </div>
+        <div class="col-md-2">
+          <button type="button"
+                  id="btnShowAll"
+                  class="btn btn-primary w-100">
+            Show All
+          </button>
+        </div>
+        <div class="col-md-2">
+          <label for="unitSelect" class="form-label">Units</label>
+          <select id="unitSelect" class="form-select">
+            <option value="au" selected>AU</option>
+            <option value="m">m</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button type="button"
+                  id="btnUpdate"
+                  class="btn btn-success w-100">
+            Update Details
+          </button>
+        </div>
+      </form>
+
+      <div id="loDetails" class="mt-4"></div>
+    </div>
+  </section>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="hz-full.js"></script>
+</body>
+</html>
