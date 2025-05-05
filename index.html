@@ -15,11 +15,11 @@
     <div class="container">
       <span class="navbar-brand h3">Habitable Zone Explorer</span>
     </div>
- <span class="navbar-brand h5"> Habitatable zone หรือเขตเอื้อชีวิต คือระยะห่างระหว่างดาวฤกษ์และดาวเคราะห์
+<span><h5>Habitatable zone หรือเขตเอื้อชีวิต คือระยะห่างระหว่างดาวฤกษ์และดาวเคราะห์
     ที่ทำให้อุณหภูมิของดาวเคราะห์อยู่ระหว่าง 0-100 องศาเซลเซียส ทำให้น้ำมีสถานะเป็นของเหลว
     ซึ่งน้ำในสถานะของเหลวเป็นปัจจัยสำคัญต่อสิ่งมีชีวิต เขตเอื้อชีวิตจึงเป็นเขตที่เหมาะกับการกำเนิดสิ่งมีชีวิต
     โดยระยะทางของขอบเขตเอื้อชีวิต จะแปรผันตรงกับกำลังส่องสว่างดาวฤกษ์ (L★/L⊙) ทั้งนี้ขึ้นอยู่ปับปัจจัยอื่นๆ ด้วย
-    เช่น การมีชั้นบรรยากาศ ค่าสัมประสิทธิ์การสะท้อนแสงของดาว ฯลฯ</p> </span>
+    เช่น การมีชั้นบรรยากาศ ค่าสัมประสิทธิ์การสะท้อนแสงของดาว ฯลฯ</h5></span>
   </nav>
 
   <!-- 1. หน้าแรก: Filter by Spectral Type -->
@@ -29,6 +29,7 @@
       <form id="typeForm" class="row g-3 align-items-end">
         <div class="col-md-2">
           <label for="spectralType" class="form-label">Type</label>
+          <h6>ชนิดดาวฤกษ์</h6>
           <select id="spectralType" class="form-select">
             <option>O</option><option>B</option><option>A</option>
             <option>F</option><option>G</option><option>K</option><option>M</option>
@@ -36,6 +37,7 @@
         </div>
         <div class="col-md-2">
           <label for="subType" class="form-label">Subtype</label>
+           <h6>ชนิดดาาวฤกษ์ย่อย</h6>
           <select id="subType" class="form-select">
             <option>0</option><option>1</option><option>2</option>
             <option>3</option><option>4</option><option>5</option>
@@ -43,10 +45,10 @@
           </select>
         </div>
         <div class="col-md-3">
-          <label for="lumAvg" class="form-label">L★/L⊙ Avg
+          <label for="lumAvg" class="form-label">L★/L⊙ Avg</label>
             <div> </div>
-          <h8>ค่าเฉลี่ยกำลังส่องสว่างดาวฤกษ์ในจำนวนเท่าของดวงอาทิตย์</h6>
-            </label>
+          <h6>ค่าเฉลี่ยกำลังส่องสว่างดาวฤกษ์ในจำนวนเท่าของดวงอาทิตย์</h6>
+          
           <input type="text"
                  id="lumAvg"
                  class="form-control"
