@@ -18,7 +18,7 @@
 <h5>Habitatable zone หรือเขตเอื้อชีวิต คือระยะห่างระหว่างดาวฤกษ์และดาวเคราะห์
     ที่ทำให้อุณหภูมิของดาวเคราะห์อยู่ระหว่าง 0-100 องศาเซลเซียส ทำให้น้ำมีสถานะเป็นของเหลว
     ซึ่งน้ำในสถานะของเหลวเป็นปัจจัยสำคัญต่อสิ่งมีชีวิต เขตเอื้อชีวิตจึงเป็นเขตที่เหมาะกับการกำเนิดสิ่งมีชีวิต
-    โดยระยะทางของขอบเขตเอื้อชีวิต จะแปรผันตรงกับกำลังส่องสว่างดาวฤกษ์ (L★/L⊙) ทั้งนี้ขึ้นอยู่ปับปัจจัยอื่นๆ ด้วย
+    โดยระยะทางของขอบเขตเอื้อชีวิต จะแปรผันตรงกับกำลังส่องสว่างดาวฤกษ์ (L★/L⊙) ทั้งนี้ขึ้นอยู่กับปัจจัยอื่นๆ ด้วย
     เช่น การมีชั้นบรรยากาศ ค่าสัมประสิทธิ์การสะท้อนแสงของดาว ฯลฯ</h5>
   </nav>
 
@@ -46,7 +46,6 @@
         </div>
         <div class="col-md-3">
           <label for="lumAvg" class="form-label">L★/L⊙ Avg</label>
-            <div> </div>
           <h6>ค่าเฉลี่ยกำลังส่องสว่างดาวฤกษ์ในจำนวนเท่าของดวงอาทิตย์</h6>
           
           <input type="text"
@@ -70,8 +69,7 @@
   <!-- 2. Habitable Zone by L★/L⊙ -->
   <section class="container mb-5">
     <div class="card p-4">
-      <h5 class="card-title">2. Habitable Zone by L★/L⊙</h5>
-        <div></div>
+      <h5 class="card-title">2. Habitable Zone by L★/L⊙</h>
       <h6>แบบจำลองแสดงขอบเขตเอื้อชีวิตตามกำลังส่องสว่าง</h6>
       
       <!-- Canvas แสดงผลแบบ linear -->
@@ -82,7 +80,8 @@
       <!-- Controls: แสดงระยะ rᵢₙ, rₒᵤₜ -->
       <form id="loForm" class="row g-3 align-items-end">
         <div class="col-md-2">
-          <label for="minR" class="form-label">rₘᵢₙ (AU) at 100 °C</label>
+          <label for="minR" class="form-label">Minimum radius at 100 °C</label>
+          <h6>ระยะทางจากดวงอาทิตย์ที่ใกล้ที่สุด ที่อุณหภูมิเฉลี่ย 100 องศาเซลเซียส</h6>
           <input type="number" step="0.01"
                  id="minR"
                  class="form-control"
@@ -96,7 +95,8 @@
           </button>
         </div>
         <div class="col-md-2">
-          <label for="maxR" class="form-label">rₒᵤₜ (AU) at 0 °C</label>
+          <label for="maxR" class="form-label">Maximum radius at 0 °C</label>
+          <h6>ระยะทางจากดวงอาทิตย์ที่ไกลที่สุด ที่อุณหภูมิเฉลี่ย 0 องศาเซลเซียส</h6>
           <input type="number" step="0.01"
                  id="maxR"
                  class="form-control"
